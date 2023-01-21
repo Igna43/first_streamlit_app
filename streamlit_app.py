@@ -51,7 +51,7 @@ def get_fruit_load_list():
        my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
        return my_cur.fetchall()
   
-# Add a button to load the fruits list
+# Add a button to load the fruits list that triggers action if it's clicked
 if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])  
   my_data_rows = get_fruit_load_list()  
